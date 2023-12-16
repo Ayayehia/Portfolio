@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
-
+import { Resume } from '@/app/page'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
@@ -17,6 +17,7 @@ function SocialLink({ className, href, children, icon: Icon }) {
       <Link
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        target="_blank"
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
         <span className="ml-4">{children}</span>
@@ -38,8 +39,7 @@ function MailIcon(props) {
 
 export const metadata = {
   title: 'About',
-  description:
-    'Im Spencer Sharp. I live in New York City, where I design the future.',
+  description: 'Im Aya Yehia and I am a Front End Developer.',
 }
 
 export default function About() {
@@ -57,8 +57,9 @@ export default function About() {
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I’m Aya Nader Yehia. (React Front-End Developer)
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl">
+            I’m Aya Nader Yehia.
+            <br /> (React Front-End Developer).
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
@@ -77,6 +78,9 @@ export default function About() {
               </span>
               feel free to ask—I'll do my best to provide helpful answers.
             </p>
+          </div>
+          <div className="mt-20 space-y-10 ">
+            <Resume />
           </div>
         </div>
         <div className="lg:pl-20">

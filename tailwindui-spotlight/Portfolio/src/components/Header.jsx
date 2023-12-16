@@ -125,7 +125,7 @@ function MobileNavigation(props) {
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/articles">Tech-Stack</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
-                <MobileNavItem href="/speaking">Contact Me</MobileNavItem>
+                <MobileNavItem href="/ContactMe">Contact Me</MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -163,9 +163,9 @@ function DesktopNavigation(props) {
     <nav {...props}>
       <ul className=" flex whitespace-nowrap rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 ">
         <NavItem href="/about">About</NavItem>
-        <NavItem href="/articles">Tech-Stack</NavItem>
+        <NavItem href="/TechStack">Tech-Stack</NavItem>
         <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/speaking">Contact Me</NavItem>
+        <NavItem href="/ContactMe">Contact Me</NavItem>
       </ul>
     </nav>
   )
@@ -199,17 +199,17 @@ function clamp(number, a, b) {
   return Math.min(Math.max(number, min), max)
 }
 
-function AvatarContainer({ className, ...props }) {
-  return (
-    <div
-      className={clsx(
-        className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10',
-      )}
-      {...props}
-    />
-  )
-}
+// function AvatarContainer({ className, ...props }) {
+//   return (
+//     <div
+//       className={clsx(
+//         className,
+//         'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10',
+//       )}
+//       {...props}
+//     />
+//   )
+// }
 
 function Avatar({ large = false, className, ...props }) {
   return (
@@ -351,10 +351,6 @@ export function Header() {
       >
         {isHomePage && (
           <>
-            <div
-              ref={avatarRef}
-              className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"
-            />
             <Container
               className="top-0 order-last -mb-3 pt-3"
               style={{
@@ -366,22 +362,7 @@ export function Header() {
                 style={{
                   position: 'var(--header-inner-position)',
                 }}
-              >
-                <div className="relative">
-                  <AvatarContainer
-                    className="absolute left-0 top-3 origin-left transition-opacity"
-                    style={{
-                      opacity: 'var(--avatar-border-opacity, 0)',
-                      transform: 'var(--avatar-border-transform)',
-                    }}
-                  />
-                  <Avatar
-                    large
-                    className="block h-16 w-16 origin-left"
-                    style={{ transform: 'var(--avatar-image-transform)' }}
-                  />
-                </div>
-              </div>
+              ></div>
             </Container>
           </>
         )}
@@ -399,13 +380,6 @@ export function Header() {
             }}
           >
             <div className="relative flex gap-4">
-              <div className="flex flex-1">
-                {!isHomePage && (
-                  <AvatarContainer>
-                    <Avatar />
-                  </AvatarContainer>
-                )}
-              </div>
               <div className="flex flex-1 justify-end md:justify-center">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
