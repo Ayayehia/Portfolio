@@ -14,6 +14,8 @@ import styled from '../../images/logos/styled-components.png'
 import Bootstrap from '../../images/logos/Bootstrap.png'
 import Firebase from '../../images/logos/Firebase.png'
 import Api from '../../images/logos/Api.jpg'
+import Redux from '../../images/logos/Redux.png'
+import Axios from '../../images/logos/Axios.png'
 function Article({ article }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
@@ -61,6 +63,8 @@ export default async function ArticlesIndex() {
     { name: 'Styled Components', logo: styled },
     { name: 'Api', logo: Api },
     { name: 'Bootstrap', logo: Bootstrap },
+    { name: 'Redux Tool-kit', logo: Redux },
+    { name: 'Axios', logo: Axios },
   ]
   // let articles = await getAllArticles()
 
@@ -71,13 +75,17 @@ export default async function ArticlesIndex() {
     >
       <div className="mx-auto mt-20 grid max-w-max grid-cols-1 place-content-center gap-x-32 gap-y-12 sm:grid-cols-3 md:gap-x-16 lg:gap-x-32">
         {sponsors.map((sponsor) => (
-          <div key={sponsor.name} className="flex items-center justify-center">
+          <div
+            key={sponsor.name}
+            className="flex flex-col items-center justify-center gap-4"
+          >
             <Image
               src={sponsor.logo}
               alt={sponsor.name}
               unoptimized
               className="h-[48px] w-[48px]"
             />
+            <h3 className="font-semibold dark:text-white">{sponsor.name}</h3>
           </div>
         ))}
       </div>

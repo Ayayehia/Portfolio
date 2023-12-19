@@ -1,14 +1,17 @@
 import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import RealEstateimage from '../../images/logos/Project.jpg'
+// import RealEstateimage from '../../images/logos/Project.jpg'
+import RealEstateimage from '../../images/logos/Villa Agency project.png'
+
 import LenskinImage from '../../images/logos/LenSkin.png'
 import AudioStore from '../../images/logos/AudioStore.png'
 import Ecommerce from '../../images/logos/EcommerceStore.png'
 const projects = [
   {
-    name: 'Real Estate Agency-(Youngest Child)',
-    description: 'working with React,Google Maps Api .',
+    name: 'Real Estate Agency-(Most Recent)',
+    description:
+      'Developed a real estate website using React,Tailwind and integrated Google Maps API.',
     link: {
       href: 'https://villa-agency-three.vercel.app/',
       label: 'Live Preview',
@@ -18,12 +21,12 @@ const projects = [
   {
     name: 'Lenskin-(Under Development)',
     description:
-      'Working with Observer Agency for a client,will provide Live preview after Delivery .',
+      'Collaborated with Observer Agency on an under-development project. Live preview available upon delivery.',
     link: { href: '#', label: 'Live Preview' },
     logo: LenskinImage,
   },
   {
-    name: 'Audio Store-(Older Child)',
+    name: 'Audio Store-(Older Project)',
     description: 'Working with Real-time data base Firebase .',
     link: {
       href: 'https://audio-phile-store.vercel.app/',
@@ -32,9 +35,8 @@ const projects = [
     logo: AudioStore,
   },
   {
-    name: 'Ecommerce-(Oldest Child)',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
+    name: 'Ecommerce-(Oldest Project)',
+    description: 'Working with Real-time data base Firebase and Redux toolkit.',
     link: {
       href: 'https://ecommerce-st-eta.vercel.app/',
       label: 'Live Preview',
@@ -71,7 +73,7 @@ export default function Projects() {
       >
         {projects.map((project) => (
           <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-[150px] w-[200px] items-center justify-center rounded-full  bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <div className="relative z-10 flex h-[150px] w-full items-center justify-center rounded-full  bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
               <Image
                 src={project.logo}
                 alt=""
@@ -81,7 +83,9 @@ export default function Projects() {
             </div>
             <span className="max-w-[219px]">
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                <Card.Link target="_blank" href={project.link.href}>
+                  {project.name}
+                </Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
               <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-pink-600 dark:text-zinc-200">
