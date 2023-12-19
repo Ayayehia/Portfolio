@@ -246,32 +246,36 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software designer, founder, and amateur astronaut.
+            I’m Aya Nader Yehia.
+            <br /> (React Front-End Developer).
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            I've been immersed in coding for a year now, and the process of
+            creating something meaningful is incredibly fulfilling for me. My
+            passion for programming is driving me to continuously enhance my
+            skills with the ultimate goal of becoming a proficient web
+            developer. Currently, I find inspiration in various websites, and my
+            GitHub showcases projects that are either reproductions or directly
+            influenced by those discoveries. My aspiration is to contribute to
+            the development of something impactful, even if it's on a modest
+            scale. I pour my efforts into my GitHub, where you can find most of
+            my work. If you have questions about HTML, CSS, or JavaScript,React
+            feel free to ask—I'll do my best to provide helpful answers.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com"
+              href="https://twitter.com/aya203684745003"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
             />
+
             <SocialLink
-              href="https://instagram.com"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
-            <SocialLink
-              href="https://github.com"
+              href="https://github.com/Ayayehia"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/aya-yehia-aa2b28267/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
@@ -287,7 +291,6 @@ export default async function Home() {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
             <Resume />
           </div>
         </div>

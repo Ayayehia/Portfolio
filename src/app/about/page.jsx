@@ -16,10 +16,10 @@ function SocialLink({ className, href, children, icon: Icon }) {
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-pink-600 dark:text-zinc-200 dark:hover:text-pink-600"
         target="_blank"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-pink-600" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -83,7 +83,7 @@ export default function About() {
             <Resume />
           </div>
         </div>
-        <div className="lg:pl-20">
+        <div className="hover:text-pink-600 lg:pl-20">
           <ul role="list">
             <SocialLink
               href="https://twitter.com/aya203684745003"
@@ -102,14 +102,14 @@ export default function About() {
             <SocialLink
               href="https://www.linkedin.com/in/aya-yehia-aa2b28267/"
               icon={LinkedInIcon}
-              className="mt-4"
+              className="mt-4 hover:text-pink-600"
             >
               Follow on LinkedIn
             </SocialLink>
             <SocialLink
-              href="mailto:spencer@planetaria.tech"
+              href="mailto:ayanader8@gmail.com"
               icon={MailIcon}
-              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+              className="mt-8 border-t border-zinc-100 pt-8 hover:text-pink-600 dark:border-zinc-700/40"
             >
               ayanader8@gmail.com
             </SocialLink>
