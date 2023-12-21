@@ -1,7 +1,8 @@
+'use client'
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
-
+import React, { useState } from 'react'
 function SpeakingSection({ children, ...props }) {
   return (
     <Section {...props}>
@@ -29,12 +30,42 @@ export const metadata = {
 }
 
 export default function Speaking() {
+  const [fullName, setFullName] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
+  console.log(fullName)
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ fullName, subject, message }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        console.log('Message sent successfully')
+        // Handle success, e.g., show a success message
+      } else {
+        console.error('Failed to send message:', data.error)
+        // Handle error, e.g., show an error message
+      }
+    } catch (error) {
+      console.error('Unexpected error:', error)
+      // Handle unexpected error, e.g., show an error message
+    }
+  }
   return (
     <SimpleLayout
       title="Contact Me."
       intro="Feel Free to Reach out if you have any further questions."
     >
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -58,6 +89,7 @@ export default function Speaking() {
                       autoComplete="username"
                       className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-white placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                       placeholder="Ex:Aya Nader"
+                      onChange={(e) => setFullName(e.target.value)}
                     />
                   </div>
                 </div>
@@ -74,11 +106,12 @@ export default function Speaking() {
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                       type="text"
-                      name="username"
-                      id="username"
+                      name="Subject"
+                      id="Subject"
                       autoComplete="username"
                       className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-white placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                       placeholder="Subject"
+                      onChange={(e) => setSubject(e.target.value)}
                     />
                   </div>
                 </div>
@@ -98,6 +131,7 @@ export default function Speaking() {
                     rows={3}
                     className="block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     defaultValue={''}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
                 <p className="mt-3 text-sm leading-6 text-gray-600">
@@ -109,7 +143,7 @@ export default function Speaking() {
             </div>
           </div>
           <button
-            type="button"
+            type="submit"
             className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  hover:bg-pink-600 hover:text-white"
           >
             Send Message

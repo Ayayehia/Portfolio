@@ -8,6 +8,12 @@ module.exports = {
   darkMode: 'class',
   plugins: [typographyPlugin],
   theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'Noto Sans', 'sans-serif'], // Example font stack
+        emoji: ['Noto Color Emoji'], // Include emoji fonts
+      },
+    },
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
       sm: ['0.875rem', { lineHeight: '1.5rem' }],
