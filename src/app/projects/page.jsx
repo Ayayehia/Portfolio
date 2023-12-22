@@ -69,11 +69,11 @@ export default function Projects() {
     >
       <ul
         role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        className="flex grid-cols-1 flex-col items-center justify-center gap-x-12 gap-y-16 sm:grid-cols-2 md:grid md:grid-cols-2  lg:grid-cols-2"
       >
         {projects.map((project) => (
-          <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-[150px] w-full items-center justify-center rounded-full  bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          <Card as="li" key={project.name} className="w-[230px]">
+            <div className="relative z-10 flex h-[150px] w-[230px]  items-center justify-center rounded-full  bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
               <Image
                 src={project.logo}
                 alt=""
