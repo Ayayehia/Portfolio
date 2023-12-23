@@ -2,7 +2,7 @@
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 function SpeakingSection({ children, ...props }) {
   return (
     <Section {...props}>
@@ -33,7 +33,15 @@ export default function Speaking() {
   const [fullName, setFullName] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+  const [sent, SetSent] = useState(false)
   console.log(fullName)
+  useEffect(() => {
+    if (sent) {
+      setFullName('')
+      setSubject('')
+      setMessage('')
+    }
+  }, [sent])
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -50,6 +58,10 @@ export default function Speaking() {
 
       if (response.ok) {
         console.log('Message sent successfully')
+        SetSent(true)
+        setFullName('')
+        setSubject('')
+        setMessage('')
         // Handle success, e.g., show a success message
       } else {
         console.error('Failed to send message:', data.error)
@@ -90,6 +102,7 @@ export default function Speaking() {
                       className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-white placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                       placeholder="Ex:Aya Nader"
                       onChange={(e) => setFullName(e.target.value)}
+                      value={fullName}
                     />
                   </div>
                 </div>
@@ -112,6 +125,7 @@ export default function Speaking() {
                       className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-white placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                       placeholder="Subject"
                       onChange={(e) => setSubject(e.target.value)}
+                      value={subject}
                     />
                   </div>
                 </div>
@@ -132,6 +146,7 @@ export default function Speaking() {
                     className="block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     defaultValue={''}
                     onChange={(e) => setMessage(e.target.value)}
+                    value={message}
                   />
                 </div>
                 <p className="mt-3 text-sm leading-6 text-gray-600">
@@ -139,6 +154,9 @@ export default function Speaking() {
                   like me to know. This message will reach my inbox, and I look
                   forward to connecting with you!"
                 </p>
+                {sent && (
+                  <p className="font-bold text-pink-600">Message Sent</p>
+                )}
               </div>
             </div>
           </div>
@@ -153,5 +171,3 @@ export default function Speaking() {
     </SimpleLayout>
   )
 }
-
-// mgit ekmd kfec fdjj
