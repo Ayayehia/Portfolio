@@ -1,15 +1,20 @@
 import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-// import RealEstateimage from '../../images/logos/Project.jpg'
 import RealEstateimage from '../../images/logos/Villa Agency project.png'
-
-import LenskinImage from '../../images/logos/LenSkin.png'
 import AudioStore from '../../images/logos/AudioStore.png'
 import Ecommerce from '../../images/logos/EcommerceStore.png'
+import Wickks from '../../images/logos/Wickkslive.png'
 const projects = [
   {
-    name: 'Real Estate Agency-(Most Recent)',
+    name: 'Wickks Platform-(Under Development)',
+    description:
+      'Collaborated with Observer Agency on an under-development project for Wickks startup. Live preview available.',
+    link: { href: 'https://wickkks.vercel.app/', label: 'Live Preview' },
+    logo: Wickks,
+  },
+  {
+    name: 'Real Estate Agency-(Recent)',
     description:
       'Developed a real estate website using React,Tailwind and integrated Google Maps API.',
     link: {
@@ -18,13 +23,7 @@ const projects = [
     },
     logo: RealEstateimage,
   },
-  {
-    name: 'Lenskin-(Under Development)',
-    description:
-      'Collaborated with Observer Agency on an under-development project. Live preview available upon delivery.',
-    link: { href: '#', label: 'Live Preview' },
-    logo: LenskinImage,
-  },
+
   {
     name: 'Audio Store-(Older Project)',
     description: 'Working with Real-time data base Firebase .',
@@ -58,7 +57,7 @@ function LinkIcon(props) {
 
 export const metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'Portfolio Project.',
 }
 
 export default function Projects() {
