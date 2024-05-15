@@ -5,7 +5,7 @@ import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
-    template: '%s - Spencer Sharp',
+    template: '%s - Portfolio',
     default: 'Aya Nader Yehia,(React Front-End Developer).',
   },
   description: 'I’m Aya Nader Yehia,(React Front-End Developer).',
