@@ -73,11 +73,14 @@ const item = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 },
 }
+{
+  /* <div className="mx-auto max-w-2xl lg:max-w-none"> */
+}
 
 export default function Projects() {
   return (
-    <div className="mx-auto min-h-screen max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-      <div className="mx-auto max-w-2xl lg:max-w-none">
+    <div className="mx-auto min-h-screen max-w-7xl  p-2 px-6 py-24 sm:py-32 md:px-11">
+      <div className=" mx-auto max-w-2xl ">
         <div className="max-w-3xl">
           <h1 className="text-foreground text-4xl font-bold tracking-tight sm:text-6xl">
             Featured Projects
@@ -93,17 +96,18 @@ export default function Projects() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2"
         >
           {projects.map((project) => (
             <motion.div key={project.name} variants={item}>
               <Card className="group relative flex h-full flex-col overflow-hidden transition-all hover:shadow-lg">
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden rounded-md">
                   <Image
                     src={project.logo}
                     alt={project.name}
                     unoptimized
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    style={{ height: '-webkit-fill-available' }}
                   />
                 </div>
                 <div className="flex flex-1 flex-col justify-between p-6">
