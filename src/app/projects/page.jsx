@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Card } from '@/components/card'
+import { Card } from '../../components/Card'
 import { ExternalLink, Github } from 'lucide-react'
 import { motion } from 'framer-motion'
 import RealEstateimage from '../../images/logos/Villa Agency project.png'
