@@ -74,7 +74,6 @@ const item = {
   show: { opacity: 1, y: 0 },
 }
 {
-  /* <div className="mx-auto max-w-2xl lg:max-w-none"> */
 }
 
 export default function Projects() {
