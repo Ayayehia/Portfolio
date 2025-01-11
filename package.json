@@ -10,6 +10,8 @@
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
     "@headlessui/react": "^1.7.13",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^2.3.0",
