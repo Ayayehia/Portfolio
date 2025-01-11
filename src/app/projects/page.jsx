@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { Card } from '@/components/card'
+import { ExternalLink, Github } from 'lucide-react'
+import { motion } from 'framer-motion'
 import RealEstateimage from '../../images/logos/Villa Agency project.png'
 import AudioStore from '../../images/logos/AudioStore.png'
 import Wickks from '../../images/logos/Wickkslive.png'
@@ -13,90 +16,132 @@ const projects = [
       'Collaborated with Observer Agency on an under-development project for Wickks startup. Live preview available.',
     link: { href: 'https://wickkks.vercel.app/', label: 'Live Preview' },
     logo: Wickks,
+    tags: ['Next.js', 'TypeScript', 'Tailwind'],
   },
   {
     name: 'Single Stop Project',
     description:
-      'Collaborated on the development of a user-friendly platform designed to provide access to public benefits and community resources in Usa.',
+      'Collaborated on the development of a user-friendly platform designed to provide access to public benefits and community resources in USA.',
     link: {
       href: 'https://dev.apps.singlestop.org/',
       label: 'Live Preview',
     },
     logo: SingleStop,
+    tags: ['React', 'Node.js', 'PostgreSQL'],
   },
   {
     name: 'Real Estate Agency',
     description:
-      'Developed a real estate website using React,Tailwind and integrated Google Maps API.',
+      'Developed a real estate website using React, Tailwind and integrated Google Maps API.',
     link: {
       href: 'https://villa-agency-three.vercel.app/',
       label: 'Live Preview',
     },
     logo: RealEstateimage,
+    tags: ['React', 'Tailwind', 'Google Maps'],
   },
-
   {
-    name: 'Audio Store-(Older Project)',
-    description: 'Working with Real-time data base Firebase .',
+    name: 'Audio Store',
+    description: 'Working with Real-time database Firebase.',
     link: {
       href: 'https://audio-phile-store.vercel.app/',
       label: 'Live Preview',
     },
     logo: AudioStore,
+    tags: ['React', 'Firebase', 'Styled Components'],
   },
 ]
 
-function LinkIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        d="M15.712 11.823a.75.75 0 1 0 1.06 1.06l-1.06-1.06Zm-4.95 1.768a.75.75 0 0 0 1.06-1.06l-1.06 1.06Zm-2.475-1.414a.75.75 0 1 0-1.06-1.06l1.06 1.06Zm4.95-1.768a.75.75 0 1 0-1.06 1.06l1.06-1.06Zm3.359.53-.884.884 1.06 1.06.885-.883-1.061-1.06Zm-4.95-2.12 1.414-1.415L12 6.344l-1.415 1.413 1.061 1.061Zm0 3.535a2.5 2.5 0 0 1 0-3.536l-1.06-1.06a4 4 0 0 0 0 5.656l1.06-1.06Zm4.95-4.95a2.5 2.5 0 0 1 0 3.535L17.656 12a4 4 0 0 0 0-5.657l-1.06 1.06Zm1.06-1.06a4 4 0 0 0-5.656 0l1.06 1.06a2.5 2.5 0 0 1 3.536 0l1.06-1.06Zm-7.07 7.07.176.177 1.06-1.06-.176-.177-1.06 1.06Zm-3.183-.353.884-.884-1.06-1.06-.884.883 1.06 1.06Zm4.95 2.121-1.414 1.414 1.06 1.06 1.415-1.413-1.06-1.061Zm0-3.536a2.5 2.5 0 0 1 0 3.536l1.06 1.06a4 4 0 0 0 0-5.656l-1.06 1.06Zm-4.95 4.95a2.5 2.5 0 0 1 0-3.535L6.344 12a4 4 0 0 0 0 5.656l1.06-1.06Zm-1.06 1.06a4 4 0 0 0 5.657 0l-1.061-1.06a2.5 2.5 0 0 1-3.535 0l-1.061 1.06Zm7.07-7.07-.176-.177-1.06 1.06.176.178 1.06-1.061Z"
-        fill="currentColor"
-      />
-    </svg>
-  )
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
 }
 
-export const metadata = {
-  title: 'Projects',
-  description: 'Portfolio Project.',
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
 }
 
 export default function Projects() {
   return (
-    <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the year but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
-    >
-      <ul
-        role="list"
-        className="flex grid-cols-1 flex-col items-center justify-center gap-x-12 gap-y-16 sm:grid-cols-2 md:grid md:grid-cols-2  lg:grid-cols-2"
-      >
-        {projects.map((project) => (
-          <Card as="li" key={project.name} className="w-[230px]">
-            <div className="relative z-10 flex h-[150px] w-[230px]  items-center justify-center rounded-full  bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
-                src={project.logo}
-                alt=""
-                className="h-full w-full rounded-xl"
-                unoptimized
-              />
-            </div>
-            <span className="max-w-[219px]">
-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link target="_blank" href={project.link.href}>
-                  {project.name}
-                </Card.Link>
-              </h2>
-              <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-pink-600 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
-            </span>
-          </Card>
-        ))}
-      </ul>
-    </SimpleLayout>
+    <div className="mx-auto min-h-screen max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+      <div className="mx-auto max-w-2xl lg:max-w-none">
+        <div className="max-w-3xl">
+          <h1 className="text-foreground text-4xl font-bold tracking-tight sm:text-6xl">
+            Featured Projects
+          </h1>
+          <p className="text-muted-foreground mt-6 text-lg leading-8">
+            A collection of projects that showcase my expertise in web
+            development. Each project represents a unique challenge and
+            demonstrates different aspects of my technical skills.
+          </p>
+        </div>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {projects.map((project) => (
+            <motion.div key={project.name} variants={item}>
+              <Card className="group relative flex h-full flex-col overflow-hidden transition-all hover:shadow-lg">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={project.logo}
+                    alt={project.name}
+                    unoptimized
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col justify-between p-6">
+                  <div>
+                    <h3 className="text-foreground font-semibold leading-7">
+                      {project.name}
+                    </h3>
+                    <p className="text-muted-foreground mt-3 text-sm leading-6">
+                      {project.description}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="bg-secondary text-secondary-foreground inline-flex items-center rounded-full px-2 py-1 text-xs font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="mt-6 flex items-center gap-4">
+                    <a
+                      href={project.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-foreground hover:text-primary inline-flex items-center gap-2 text-sm font-medium transition-colors"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      Live Preview
+                    </a>
+                    <a
+                      href="#"
+                      className="text-foreground hover:text-primary inline-flex items-center gap-2 text-sm font-medium transition-colors"
+                    >
+                      <Github className="h-4 w-4" />
+                      Source Code
+                    </a>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </div>
   )
 }
