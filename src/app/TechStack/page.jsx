@@ -14,8 +14,13 @@ import styled from '../../images/logos/styled-components.png'
 import Bootstrap from '../../images/logos/Bootstrap.png'
 import Firebase from '../../images/logos/Firebase.png'
 import Api from '../../images/logos/Api.jpg'
+import Next from '../../images/logos/Next.png'
 import Redux from '../../images/logos/Redux.png'
 import Axios from '../../images/logos/Axios.png'
+import Storybook from '../../images/logos/Storybook.png'
+import Ruby from '../../images/logos/Ruby.png'
+import TypeScript from '../../images/logos/TypeScript.png'
+
 function Article({ article }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
@@ -57,6 +62,10 @@ export default async function ArticlesIndex() {
     { name: 'Css', logo: Css },
     { name: 'JavaScript', logo: Js },
     { name: 'React', logo: React },
+    { name: 'Next', logo: Next },
+    { name: 'TypeScript', logo: TypeScript },
+    { name: 'Ruby', logo: Ruby },
+    { name: 'storyBook', logo: Storybook },
     { name: 'Firebase', logo: Firebase },
     { name: 'Tailwind', logo: Tailwind },
     { name: 'Material Ui', logo: MaterialUi },
