@@ -16,7 +16,14 @@ const projects = [
       'Collaborated with Observer Agency on an under-development project for Wickks startup. Live preview available.',
     link: { href: 'https://wickkks.vercel.app/', label: 'Live Preview' },
     logo: Wickks,
-    tags: ['Next.js', 'TypeScript', 'Tailwind'],
+    tags: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind',
+      'modelviewer 3D',
+      'firebase',
+      'google authentification',
+    ],
   },
   {
     name: 'Single Stop Project',
@@ -27,7 +34,7 @@ const projects = [
       label: 'Live Preview',
     },
     logo: SingleStop,
-    tags: ['React', 'Node.js', 'PostgreSQL'],
+    tags: ['React', 'ruby', 'graphql', 'typescript', 'eslint', 'storybook'],
   },
   {
     name: 'Real Estate Agency',
@@ -127,13 +134,6 @@ export default function Projects() {
                     >
                       <ExternalLink className="h-4 w-4" />
                       Live Preview
-                    </a>
-                    <a
-                      href="#"
-                      className="text-foreground hover:text-primary inline-flex items-center gap-2 text-sm font-medium transition-colors"
-                    >
-                      <Github className="h-4 w-4" />
-                      Source Code
                     </a>
                   </div>
                 </div>
