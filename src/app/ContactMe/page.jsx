@@ -88,7 +88,7 @@ export default function Speaking() {
               <div className="sm:col-span-4">
                 <label
                   htmlFor="username"
-                  className="block text-sm font-medium leading-6 text-white"
+                  className="block text-sm font-medium leading-6 "
                 >
                   Full Name
                 </label>
@@ -99,7 +99,7 @@ export default function Speaking() {
                       name="username"
                       id="username"
                       autoComplete="username"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-white placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1  placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                       placeholder="Ex:Aya Nader"
                       onChange={(e) => setFullName(e.target.value)}
                       value={fullName}
@@ -111,7 +111,7 @@ export default function Speaking() {
               <div className="sm:col-span-4">
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-medium leading-6 text-white"
+                  className="block text-sm font-medium leading-6 "
                 >
                   Subject
                 </label>
@@ -122,7 +122,7 @@ export default function Speaking() {
                       name="Subject"
                       id="Subject"
                       autoComplete="username"
-                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-white placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1  placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                       placeholder="Subject"
                       onChange={(e) => setSubject(e.target.value)}
                       value={subject}
@@ -134,7 +134,7 @@ export default function Speaking() {
               <div className="col-span-full">
                 <label
                   htmlFor="about"
-                  className="block text-sm font-medium leading-6 text-white"
+                  className="block text-sm font-medium leading-6 "
                 >
                   Message
                 </label>
@@ -143,7 +143,7 @@ export default function Speaking() {
                     id="Message"
                     name="Message"
                     rows={3}
-                    className="block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     defaultValue={''}
                     onChange={(e) => setMessage(e.target.value)}
                     value={message}
