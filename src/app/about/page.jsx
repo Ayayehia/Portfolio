@@ -63,20 +63,20 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I've been immersed in coding for a year now, and the process of
-              creating something meaningful is incredibly fulfilling for me. My
-              passion for programming is driving me to continuously enhance my
-              skills with the ultimate goal of becoming a proficient web
-              developer. Currently, I find inspiration in various websites, and
-              my GitHub showcases projects that are either reproductions or
-              directly influenced by those discoveries. My aspiration is to
-              contribute to the development of something impactful, even if it's
-              on a modest scale. I pour my efforts into my GitHub, where you can
-              find most of my work. If you have questions about
+              I have a deep passion for coding, and the process of creating
+              something meaningful is incredibly fulfilling to me. My enthusiasm
+              for programming drives me to continuously enhance my skills, with
+              the ultimate goal of becoming a proficient web developer. I draw
+              inspiration from various websites, and my GitHub showcases
+              projects that are either reproductions or influenced by those
+              discoveries. My aspiration is to contribute to the development of
+              impactful projects, no matter the scale. I dedicate my efforts to
+              my GitHub, where you can explore most of my work. If you have
+              questions about
               <span className="p-1 font-bold text-pink-600">
-                HTML, CSS, or JavaScript,React
+                HTML, CSS, JavaScript,typeScript, React or any other Technology
               </span>
-              feel free to ask—I'll do my best to provide helpful answers.
+              , feel free to ask—I’ll do my best to provide helpful answers.
             </p>
           </div>
           <div className="mt-20 space-y-10 ">
